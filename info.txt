@@ -1,0 +1,13 @@
+
+Create simple shop
+    Create  Category, Product models
+    Install Pillow
+    Register models in admin.py
+    Create product_list, product_detail views
+    Add base.html, product/list.html, product/detail.html
+    Add MEDIA_URL, ROOT at settings.py
+
+Create cart
+    Использование механизма сессий для хранения информации о закупкею.
+        Благодаря промежуточному слою текущая сессия становится доступна в объекте запроса, request, и вы можете обратиться к ней через запись request.session.
+    В файле cart.py создаем объект Cart  с методами add, remove и др

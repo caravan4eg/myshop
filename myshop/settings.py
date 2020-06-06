@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from braintree import Configuration, Environment
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 
 ]
 
@@ -133,3 +135,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Сессии и корзина
 CART_SESSION_ID = 'cart'
+
+
+# Настройки Braintree.
+BRAINTREE_MERCHANT_ID = os.environ.get('BRAINTREE_MERCHANT_ID')
+BRAINTREE_PUBLIC_KEY = os.environ.get('BRAINTREE_PUBLIC_KEY')
+BRAINTREE_PRIVATE_KEY = os.environ.get('BRAINTREE_PRIVATE_KEY')
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
