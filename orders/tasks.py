@@ -7,10 +7,8 @@ from .models import Order
 def order_created(order_id):
     """Задача отправки email-уведомлений при успешном оформлении заказа."""
     order = Order.objects.get(id=order_id)
-    subject = 'Order nr. {}'.format(order.id)
-    message = 'Dear {},\n\nYou have successfully placed an order.\
-    Your order id is {}.'.format(order.first_name,
-                                 order.id)
+    subject = f'Order nr. {order.id}'
+    message = f'Dear {order.first_name},\n\nYou have successfully placed an order. Your order id is {order.id}.'
     mail_sent = send_mail(subject,
                           message,
                           'admin@myshop.com',

@@ -23,3 +23,9 @@ Create cart
     python manage.py startapp orders
     Создание моделей заказа
     Добавление моделей на сайт администрирования
+
+Выполнение асинхронных задач с Celery
+    pip install celery
+    apt-get install rabbitmq
+    root/celery.py
+    orders/tasks.py
