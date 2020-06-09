@@ -10,7 +10,7 @@ class Cart(object):
         Initialize the cart.
         """
         self.session = request.session
-        print('[*] Session Cart: ', request.session['cart'])
+        # print('[*] Session Cart: ', request.session['cart'])
 
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
