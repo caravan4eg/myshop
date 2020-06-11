@@ -29,3 +29,7 @@ Create cart
     apt-get install rabbitmq
     root/celery.py
     orders/tasks.py
+
+Add Coupons
+    create Coupon model
+    create form for copons code
